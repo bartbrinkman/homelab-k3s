@@ -1,0 +1,7 @@
+apiVersion: v1
+kind: Namespace
+metadata:
+  labels:
+    app.kubernetes.io/instance: monitoring
+    app.kubernetes.io/version: v0.10.0
+  name: monitoring
