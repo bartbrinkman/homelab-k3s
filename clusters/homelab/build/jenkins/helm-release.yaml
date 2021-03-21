@@ -17,3 +17,4 @@ spec:
   values:
     controller:
       image: karlhendrik/jenkins-arm
+      tag: "2.222.1"
