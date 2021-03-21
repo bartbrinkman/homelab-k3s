@@ -23,7 +23,7 @@ spec:
               mountPath: /persistentvolumes
           env:
             - name: PROVISIONER_NAME
-              value: quay.io/external_storage/nfs-client-provisioner-arm 
+              value: quay.io/nfs-client-provisioner 
             - name: NFS_SERVER
               value: 192.168.1.100
             - name: NFS_PATH
