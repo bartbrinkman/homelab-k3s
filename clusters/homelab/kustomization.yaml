@@ -5,7 +5,11 @@ resources:
 - ./flux-system/gotk-sync.yaml
 - ./namespaces/build.yaml
 - ./namespaces/monitoring.yaml
+- ./namespaces/nfs.yaml
 - ./build/jenkins/helm-repository.yaml
 - ./build/jenkins/helm-release.yaml
 - ./monitoring/prometheus/helm-repository.yaml
 - ./monitoring/prometheus/helm-release.yaml
+- ./nfs/nfs-client-provisioner/deployment.yaml
+- ./nfs/nfs-client-provisioner/rbac.yaml
+- ./nfs/nfs-client-provisioner/storage-class.yaml
