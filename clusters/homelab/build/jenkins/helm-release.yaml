@@ -16,5 +16,5 @@ spec:
       interval: 1m
   values:
     controller:
-      image: karlhendrik/jenkins-arm
-      tag: "2.222.1"
+      image: jenkins4eval/jenkins
+      tag: "2.284-arm64"
