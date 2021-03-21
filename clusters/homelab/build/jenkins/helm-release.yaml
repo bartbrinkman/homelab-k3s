@@ -18,3 +18,5 @@ spec:
     controller:
       image: jenkins4eval/jenkins
       tag: "2.284-arm64"
+    persistence:
+      storageClass: managed-nfs-storage
