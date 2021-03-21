@@ -1,0 +1,17 @@
+apiVersion: helm.toolkit.fluxcd.io/v2beta1
+kind: HelmRelease
+metadata:
+  name: jenkins
+  namespace: build
+spec:
+  interval: 5m
+  chart:
+    spec:
+      chart: jenkins/jenkins
+      version: 3.2.4
+      sourceRef:
+        kind: HelmRepository
+        name: jenkins
+        namespace: build
+      interval: 1m
+  values:

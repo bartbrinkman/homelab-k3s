@@ -3,6 +3,9 @@ kind: Kustomization
 resources:
 - ./flux-system/gotk-components.yaml
 - ./flux-system/gotk-sync.yaml
+- ./namespaces/build.yaml
 - ./namespaces/monitoring.yaml
+- ./build/jenkins/helm-repository.yaml
+- ./build/jenkins/helm-relese.yaml
 - ./monitoring/prometheus/helm-repository.yaml
 - ./monitoring/prometheus/helm-release.yaml
