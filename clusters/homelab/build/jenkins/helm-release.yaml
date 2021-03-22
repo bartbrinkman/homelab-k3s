@@ -15,7 +15,6 @@ spec:
         namespace: build
       interval: 1m
   values:
-
     controller:
       image: jenkins4eval/jenkins
       tag: "2.284-arm64"   
@@ -26,5 +25,7 @@ spec:
         hostName: jenkins.k3s
         annotations:
           kubernetes.io/ingress.class: traefik
+    agent:
+      image: jenkins4eval/inbound-agent
     persistence:
       storageClass: managed-nfs-storage
