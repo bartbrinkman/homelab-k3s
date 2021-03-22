@@ -1,0 +1,26 @@
+apiVersion: apps/v1
+kind: DaemonSet
+metadata:
+  name: ledshim
+  namespace: default
+  labels:
+    app: ledshim
+spec:
+  selector:
+    matchLabels:
+      name: ledshim
+  template:
+    metadata:
+      labels:
+        name: ledshim
+    spec:
+      tolerations:
+      - key: node-role.kubernetes.io/master
+        effect: NoSchedule
+      containers:
+      - name: ledshim
+        image: bartbrinkman/homelab-ledshim:latest
+        imagePullPolicy: Always
+        securityContext:
+          privileged: true
+      terminationGracePeriodSeconds: 10

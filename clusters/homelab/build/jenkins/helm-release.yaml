@@ -28,16 +28,5 @@ spec:
         hostName: jenkins.k3s
         annotations:
           kubernetes.io/ingress.class: traefik
-    agent:
-      image: pi4k8s/inbound-agent
-      tag: 4.3
-    additionalAgents:
-      maven:
-        podName: maven
-        customJenkinsLabels: maven
-        # An example of overriding the jnlp container
-        sideContainerName: jnlp
-        image: pi4k8s/inbound-agent
-        tag: 4.3
     persistence:
       storageClass: managed-nfs-storage
