@@ -30,3 +30,4 @@ spec:
       tag: 4.3
     persistence:
       storageClass: managed-nfs-storage
+      
