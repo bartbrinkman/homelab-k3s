@@ -15,17 +15,16 @@ spec:
         namespace: build
       interval: 1m
   values:
+
     controller:
       image: jenkins4eval/jenkins
       tag: "2.284-arm64"   
       additionalPlugins:
         - docker-workflow:1.26
-      jenkinsUrlProtocol: http
+      ingress:
+        enabled: true
+        hostName: jenkins.k3s
+        annotations:
+          kubernetes.io/ingress.class: traefik
     persistence:
       storageClass: managed-nfs-storage
-    ingress:
-      enabled: true
-      hostName: jenkins.k3s
-      annotations:
-        kubernetes.io/ingress.class: traefik
-      path: "/"
