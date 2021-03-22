@@ -26,6 +26,7 @@ spec:
         annotations:
           kubernetes.io/ingress.class: traefik
     agent:
-      image: jenkins4eval/inbound-agent
+      image: pi4k8s/inbound-agent
+      tag: 4.3
     persistence:
       storageClass: managed-nfs-storage
