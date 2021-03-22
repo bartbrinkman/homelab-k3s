@@ -15,3 +15,17 @@ spec:
         namespace: monitoring
       interval: 1m
   values:
+    alertmanager:
+      enabled: false
+    prometheus:
+      prometheusSpec:
+        storageSpec: 
+          volumeClaimTemplate:
+            spec:
+              storageClassName: managed-nfs-storage
+              accessModes: ["ReadWriteOnce"]
+              resources:
+                requests:
+                  storage: 50Gi
+            selector: {}
+            
