@@ -22,3 +22,8 @@ spec:
         - docker-workflow:1.26
     persistence:
       storageClass: managed-nfs-storage
+    ingress:
+      enabled: true
+      hostName: jenkins.k3s
+      annotations:
+        kubernetes.io/ingress.class: traefik
