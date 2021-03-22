@@ -17,6 +17,8 @@ spec:
   values:
     controller:
       image: jenkins4eval/jenkins
-      tag: "2.284-arm64"     
+      tag: "2.284-arm64"   
+      additionalPlugins:
+        - docker-workflow:1.26
     persistence:
       storageClass: managed-nfs-storage
