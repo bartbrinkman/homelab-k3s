@@ -5,7 +5,7 @@ metadata:
   namespace: default
   labels:
     app: ledshim
-    ledshim: true
+    ledshim: "true"
 spec:
   selector:
     matchLabels:
@@ -14,13 +14,13 @@ spec:
     metadata:
       labels:
         name: ledshim
-        ledshim: true
+        ledshim: "true"
     spec:
       tolerations:
       - key: node-role.kubernetes.io/master
         effect: NoSchedule
       nodeSelector:
-        ledshim: true
+        ledshim: "true"
       containers:
       - name: ledshim
         image: bartbrinkman/homelab-ledshim:latest
