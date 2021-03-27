@@ -21,5 +21,7 @@ spec:
         kubernetes.io/ingress.class: traefik
       hosts:
         - host: heimdall.k3s
+          paths:
+            - path: /
 
                         
