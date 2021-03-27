@@ -1,0 +1,25 @@
+apiVersion: helm.toolkit.fluxcd.io/v2beta1
+kind: HelmRelease
+metadata:
+  name: heimdall
+  namespace: default
+spec:
+  interval: 5m
+  chart:
+    spec:
+      chart: heimdall
+      version: 6.0.1
+      sourceRef:
+        kind: HelmRepository
+        name: heimdall
+        namespace: default
+      interval: 10m
+  values:
+    ingress:
+      enabled: true
+      annotations: 
+        kubernetes.io/ingress.class: traefik
+        hosts:
+          - host: heimdall.k3s
+
+                        
