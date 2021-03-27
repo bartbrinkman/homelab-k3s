@@ -19,7 +19,7 @@ spec:
       enabled: true
       annotations: 
         kubernetes.io/ingress.class: traefik
-        hosts:
-          - host: heimdall.k3s
+      hosts:
+        - host: heimdall.k3s
 
                         
