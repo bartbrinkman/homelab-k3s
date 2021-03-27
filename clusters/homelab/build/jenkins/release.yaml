@@ -12,7 +12,6 @@ spec:
       sourceRef:
         kind: HelmRepository
         name: jenkins
-        namespace: build
       interval: 1m
   values:
     controller:

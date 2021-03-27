@@ -12,7 +12,6 @@ spec:
       sourceRef:
         kind: HelmRepository
         name: kube-prometheus-stack
-        namespace: monitoring
       interval: 10m
   values:
     alertmanager:
