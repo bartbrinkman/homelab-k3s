@@ -29,4 +29,6 @@ spec:
         emptyDir:
           enabled: false
         mountPath: /data
+        accessMode: ReadWriteOnce
+        storageClass: managed-nfs-storage
                         
