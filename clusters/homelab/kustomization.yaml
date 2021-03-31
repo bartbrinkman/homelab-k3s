@@ -4,5 +4,6 @@ resources:
   - ../../sources
   - build
   - default
+  - kube-system
   - monitoring
   - nfs
