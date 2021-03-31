@@ -29,5 +29,5 @@ spec:
         accessMode: ReadWriteOnce
         size: 1Gi
         storageClass: managed-nfs-storage
-        mountPath: /heimdall-config
+        mountPath: /heimdall
                         
