@@ -23,5 +23,10 @@ spec:
         - host: heimdall.k3s
           paths:
             - path: /
-
+    persistence:
+      data:
+        enabled: true
+        emptyDir:
+          enabled: false
+        mountPath: /data
                         
