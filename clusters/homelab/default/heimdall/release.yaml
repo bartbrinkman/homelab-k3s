@@ -24,9 +24,8 @@ spec:
           paths:
             - path: /
     persistence:
-      data:
+      config:
         enabled: true
-        mountPath: /data
         accessMode: ReadWriteOnce
         size: 1Gi
         storageClass: managed-nfs-storage
