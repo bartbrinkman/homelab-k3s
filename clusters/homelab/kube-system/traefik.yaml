@@ -7,4 +7,4 @@ spec:
   valuesContent: |-
     dashboard:
       enabled: true
-      domain: traefik.k3s
+      domain: traefik.k3s.bartbrinkman.nl
