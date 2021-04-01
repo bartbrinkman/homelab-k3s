@@ -17,7 +17,7 @@ metadata:
 spec:
   secretName: traefik-k3s-bartbrinkman-nl-tls
   issuerRef:
-    name: letsencrypt-staging
+    name: letsencrypt-staging-secret
     kind: ClusterIssuer
   commonName: traefik.k3s.bartbrinkman.nl
   dnsNames:
