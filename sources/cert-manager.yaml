@@ -4,4 +4,4 @@ metadata:
   name: cert-manager
 spec:
   interval: 10m
-  url: https://github.com/jetstack/cert-manager
+  url: https://charts.jetstack.io
