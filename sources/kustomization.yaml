@@ -3,5 +3,6 @@ kind: Kustomization
 resources:
   - heimdall.yaml
   - jenkins.yaml
+  - jetstack.yaml
   - prometheus.yaml
   
