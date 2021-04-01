@@ -8,3 +8,17 @@ spec:
     dashboard:
       enabled: true
       domain: traefik.k3s.bartbrinkman.nl
+---
+apiVersion: cert-manager.io/v1alpha2
+kind: Certificate
+metadata:
+  name: traefik-k3s-bartbrinkman-nl
+  namespace: kube-system
+spec:
+  secretName: traefik-k3s-bartbrinkman-nl-tls
+  issuerRef:
+    name: letsencrypt-staging
+    kind: ClusterIssuer
+  commonName: traefik.k3s.bartbrinkman.nl
+  dnsNames:
+  - traefik.k3s.bartbrinkman.nl
