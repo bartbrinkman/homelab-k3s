@@ -3,6 +3,7 @@ kind: Kustomization
 resources:
   - ../../sources
   - build
+  - cert-manager
   - default
   - kube-system
   - monitoring
