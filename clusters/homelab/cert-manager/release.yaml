@@ -15,4 +15,5 @@ spec:
         namespace: default
       interval: 10m
   values:
+    installCRDs: true
     
