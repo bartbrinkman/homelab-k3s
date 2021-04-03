@@ -6,5 +6,5 @@ metadata:
 spec:
   valuesContent: |-
     dashboard:
-      enabled: true
-      domain: traefik.k3s.bartbrinkman.nl
+      enabled: false
+      # domain: traefik.k3s.bartbrinkman.nl
