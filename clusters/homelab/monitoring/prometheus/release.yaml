@@ -1,4 +1,4 @@
-apiVersion: helm.toolkit.fluxcd.io/v2beta1
+apiVersion: helm.toolkit.fluxcd.io/v2beta1  
 kind: HelmRelease
 metadata:
   name: kube-prometheus-stack
@@ -29,12 +29,12 @@ spec:
                   storage: 50Gi
     prometheusOperator:
       affinity:
-        podAffinity:
+        nodeAffinity:
           requiredDuringSchedulingIgnoredDuringExecution:
-          - labelSelector:
-            matchExpressions:
-            - key: kubernetes.io/hostname
-              operator: In
-              values:
-              - "k8s-node"
-                        
+            nodeSelectorTerms:
+            - matchExpressions:
+              - key: kubernetes.io/hostname
+                operator: In
+                values:
+                - "k8s-node"
+                          

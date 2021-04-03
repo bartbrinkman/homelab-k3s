@@ -32,12 +32,13 @@ spec:
       affinity:
         podAffinity:
           requiredDuringSchedulingIgnoredDuringExecution:
-            - labelSelector:
-              matchExpressions:
-                - key: kubernetes.io/hostname
-                  operator: In
-                  values:
-                    - "k8s-node"
+          - labelSelector:
+            matchExpressions:
+            - key: kubernetes.io/hostname
+              operator: In
+              values:
+              - "k8s-node"
+              topologyKey: kubernetes.io/hostname
       volumes:
         - name: nfs-client-root
           nfs:
