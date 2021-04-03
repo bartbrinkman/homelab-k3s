@@ -37,5 +37,4 @@ spec:
               operator: In
               values:
               - "k8s-node"
-          topologyKey: kubernetes.io/hostname
                         
