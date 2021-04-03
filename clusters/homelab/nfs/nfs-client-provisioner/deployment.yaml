@@ -34,10 +34,8 @@ spec:
           requiredDuringSchedulingIgnoredDuringExecution:
           - labelSelector:
               matchExpressions:
-              - key: kubernetes.io/hostname
-                operator: In
-                values:
-                - "k8s-node"
+              - key: node-role.kubernetes.io/master
+                operator: DoesNotExist
             topologyKey: topology.kubernetes.io/zone                  
       volumes:
         - name: nfs-client-root
