@@ -11,7 +11,7 @@ spec:
   - host: traefik.k3s.bartbrinkman.nl
     http:
       paths:
-      - path: /
+      - pathType: ImplementationSpecific
         backend:
           serviceName: traefik-dashboard
           servicePort: dashboard-http
