@@ -3,8 +3,6 @@ kind: HelmChartConfig
 metadata:
   name: traefik
   namespace: kube-system
-  annotations:
-    cert-manager.io/cluster-issuer: letsencrypt
 spec:
   valuesContent: |-
     dashboard:
