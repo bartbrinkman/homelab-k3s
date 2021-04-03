@@ -29,24 +29,24 @@ spec:
                   storage: 50Gi
     prometheusOperator:
       affinity:
-        nodeAffinity:
+        podAffinity:
           requiredDuringSchedulingIgnoredDuringExecution:
-            - labelSelector:
-              matchExpressions:
-              - key: kubernetes.io/hostname
-                operator: In
-                values:
-                - "k8s-node"
-              topologyKey: kubernetes.io/hostname
+          - labelSelector:
+            matchExpressions:
+            - key: kubernetes.io/hostname
+              operator: In
+              values:
+              - "k8s-node"
+            topologyKey: kubernetes.io/hostname
     grafana:
       affinity:
-        nodeAffinity:
+        podAffinity:
           requiredDuringSchedulingIgnoredDuringExecution:
-            - labelSelector:
-              matchExpressions:
-              - key: kubernetes.io/hostname
-                operator: In
-                values:
-                - "k8s-node"
-              topologyKey: kubernetes.io/hostname
+          - labelSelector:
+            matchExpressions:
+            - key: kubernetes.io/hostname
+              operator: In
+              values:
+              - "k8s-node"
+            topologyKey: kubernetes.io/hostname
                           
