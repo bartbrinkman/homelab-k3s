@@ -22,3 +22,4 @@ spec:
   commonName: traefik.k3s.bartbrinkman.nl
   dnsNames:
   - traefik.k3s.bartbrinkman.nl
+  

@@ -22,7 +22,7 @@ spec:
         - docker-workflow:1.26
       resources:
         limits:
-          memory: "2048Mi"
+          memory: "1536Mi"
       ingress:
         enabled: true
         hostName: jenkins.k3s
