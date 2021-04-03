@@ -31,20 +31,22 @@ spec:
       affinity:
         nodeAffinity:
           requiredDuringSchedulingIgnoredDuringExecution:
-            nodeSelectorTerms:
-            - matchExpressions:
+            - labelSelector:
+              matchExpressions:
               - key: kubernetes.io/hostname
                 operator: In
                 values:
                 - "k8s-node"
+              topologyKey: kubernetes.io/hostname
     grafana:
       affinity:
         nodeAffinity:
           requiredDuringSchedulingIgnoredDuringExecution:
-            nodeSelectorTerms:
-            - matchExpressions:
+            - labelSelector:
+              matchExpressions:
               - key: kubernetes.io/hostname
                 operator: In
                 values:
                 - "k8s-node"
+              topologyKey: kubernetes.io/hostname
                           
