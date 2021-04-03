@@ -8,10 +8,3 @@ spec:
     dashboard:
       enabled: true
       domain: traefik.k3s.bartbrinkman.nl
-    ports:
-      websecure:
-        tls:
-          certResolver: letsencrypt
-          domains:
-            - main: traefik.k3s.bartbrinkman.nl
-

@@ -3,3 +3,4 @@ kind: Kustomization
 resources:
   - coredns.yaml
   - traefik.yaml
+  - traefik-dashboard.yaml
