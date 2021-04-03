@@ -33,10 +33,10 @@ spec:
           requiredDuringSchedulingIgnoredDuringExecution:
           - labelSelector:
               matchExpressions:
-              - key: kubernetes.io/hostname
-                operator: In
+              - key: node-role.kubernetes.io/master
+                operator: NotIn
                 values:
-                - "k8s-node"
+                - "true"
             topologyKey: topology.kubernetes.io/zone
     grafana:
       affinity:
@@ -44,9 +44,9 @@ spec:
           requiredDuringSchedulingIgnoredDuringExecution:
           - labelSelector:
               matchExpressions:
-              - key: kubernetes.io/hostname
-                operator: In
+              - key: node-role.kubernetes.io/master
+                operator: NotIn
                 values:
-                - "k8s-node"
+                - "true"
             topologyKey: topology.kubernetes.io/zone
                           
