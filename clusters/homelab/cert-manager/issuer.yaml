@@ -7,7 +7,7 @@ spec:
     server: https://acme-staging-v02.api.letsencrypt.org/directory
     email: bart.brinkman@gmail.com
     privateKeySecretRef:
-      name: letsencrypt-staging-secret
+      name: letsencrypt-staging
     solvers:
     - http01:
         ingress:
