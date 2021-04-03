@@ -29,14 +29,13 @@ spec:
               value: 192.168.1.100
             - name: NFS_PATH
               value: /mnt/nfs
-      affinity:
-        podAffinity:
+      affinity:    
+        nodeAffinity:
           requiredDuringSchedulingIgnoredDuringExecution:
-          - labelSelector:
-              matchExpressions:
+            nodeSelectorTerms:
+            - matchExpressions:
               - key: node-role.kubernetes.io/master
                 operator: DoesNotExist
-            topologyKey: kubernetes.io/hostname                  
       volumes:
         - name: nfs-client-root
           nfs:

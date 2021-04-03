@@ -29,20 +29,17 @@ spec:
                   storage: 50Gi
     prometheusOperator:
       affinity:
-        podAffinity:
+        nodeAffinity:
           requiredDuringSchedulingIgnoredDuringExecution:
-          - labelSelector:
-              matchExpressions:
+            nodeSelectorTerms:
+            - matchExpressions:
               - key: node-role.kubernetes.io/master
                 operator: DoesNotExist
-            topologyKey: kubernetes.io/hostname
     grafana:
       affinity:
-        podAffinity:
+        nodeAffinity:
           requiredDuringSchedulingIgnoredDuringExecution:
-          - labelSelector:
-              matchExpressions:
+            nodeSelectorTerms:
+            - matchExpressions:
               - key: node-role.kubernetes.io/master
-                operator: DoesNotExist
-            topologyKey: kubernetes.io/hostname
-                          
+                operator: DoesNotExist                          
