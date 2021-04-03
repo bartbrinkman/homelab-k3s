@@ -27,4 +27,15 @@ spec:
               resources:
                 requests:
                   storage: 50Gi
+    prometheusOperator:
+      affinity:
+        podAffinity:
+          requiredDuringSchedulingIgnoredDuringExecution:
+          - labelSelector:
+            matchExpressions:
+            - key: kubernetes.io/hostname
+              operator: In
+              values:
+              - "k8s-node"
+          topologyKey: kubernetes.io/hostname
                         
