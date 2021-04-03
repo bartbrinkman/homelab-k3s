@@ -35,10 +35,8 @@ spec:
           - labelSelector:
               matchExpressions:
               - key: node-role.kubernetes.io/master
-                operator: NotIn
-                values:
-                - "true"
-            topologyKey: topology.kubernetes.io/zone                  
+                operator: DoesNotExist
+            topologyKey: kubernetes.io/hostname                  
       volumes:
         - name: nfs-client-root
           nfs:
