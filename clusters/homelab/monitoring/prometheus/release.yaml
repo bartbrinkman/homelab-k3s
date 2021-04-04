@@ -15,10 +15,39 @@ spec:
         name: kube-prometheus-stack
         namespace: default      
   values:
+    defaultRules:
+      rules:
+        alertmanager: false
+
     alertmanager:
       enabled: false
+
+    grafana:
+      ingress:
+        enable: true
+        annotations: 
+          kubernetes.io/ingress.class: traefik
+          cert-manager.io/cluster-issuer: letsencrypt
+        hosts:
+          - grafana.k3s.bartbrinkman.nl
+        tls:
+          - secretName: grafana-k3s-bartbrinkman-nl-tls
+            hosts:
+              - grafana.k3s.barbrinkman.nl
+        affinity:
+        nodeAffinity:
+          requiredDuringSchedulingIgnoredDuringExecution:
+            nodeSelectorTerms:
+              - matchExpressions:
+                - key: node-role.kubernetes.io/master
+                  operator: DoesNotExist
+    
     prometheus:
       prometheusSpec:
+        scrapeInterval: 60s
+        resources:
+          requests:
+            memory: 200Mi
         storageSpec: 
           volumeClaimTemplate:
             spec:
@@ -28,20 +57,21 @@ spec:
                 requests:
                   storage: 50Gi
         retention: 1d
+        affinity:
+          nodeAffinity:
+            requiredDuringSchedulingIgnoredDuringExecution:
+              nodeSelectorTerms:
+                - matchExpressions:
+                  - key: node-role.kubernetes.io/master
+                    operator: DoesNotExist
+
 
     prometheusOperator:
       affinity:
         nodeAffinity:
           requiredDuringSchedulingIgnoredDuringExecution:
             nodeSelectorTerms:
-            - matchExpressions:
-              - key: node-role.kubernetes.io/master
-                operator: DoesNotExist
-    grafana:
-      affinity:
-        nodeAffinity:
-          requiredDuringSchedulingIgnoredDuringExecution:
-            nodeSelectorTerms:
-            - matchExpressions:
-              - key: node-role.kubernetes.io/master
-                operator: DoesNotExist                          
+              - matchExpressions:
+                - key: node-role.kubernetes.io/master
+                  operator: DoesNotExist
+                                
