@@ -5,6 +5,7 @@ metadata:
   namespace: build
 spec:
   interval: 1m
+  timeout: 30m
   chart:
     spec:
       chart: jenkins
@@ -13,7 +14,6 @@ spec:
         kind: HelmRepository
         name: jenkins
         namespace: default
-      interval: 1m
   values:
     controller:
       image: jenkins4eval/jenkins

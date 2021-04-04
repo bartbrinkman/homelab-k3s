@@ -4,7 +4,8 @@ metadata:
   name: kube-prometheus-stack
   namespace: monitoring
 spec:
-  interval: 5m
+  interval: 1m
+  timeout: 30m
   chart:
     spec:
       chart: kube-prometheus-stack
@@ -12,8 +13,7 @@ spec:
       sourceRef:
         kind: HelmRepository
         name: kube-prometheus-stack
-        namespace: default
-      interval: 10m
+        namespace: default      
   values:
     alertmanager:
       enabled: false
@@ -28,7 +28,7 @@ spec:
                 requests:
                   storage: 50Gi
         retention: 1d
-        
+
     prometheusOperator:
       affinity:
         nodeAffinity:

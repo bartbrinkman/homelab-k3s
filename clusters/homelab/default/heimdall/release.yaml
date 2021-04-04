@@ -4,7 +4,8 @@ metadata:
   name: heimdall
   namespace: default
 spec:
-  interval: 5m
+  interval: 1m
+  timeout: 30m
   chart:
     spec:
       chart: heimdall
@@ -13,7 +14,6 @@ spec:
         kind: HelmRepository
         name: heimdall
         namespace: default
-      interval: 10m
   values:
     ingress:
       enabled: true
@@ -29,4 +29,11 @@ spec:
         accessMode: ReadWriteOnce
         size: 1Gi
         storageClass: managed-nfs-storage
+    affinity:
+        nodeAffinity:
+          requiredDuringSchedulingIgnoredDuringExecution:
+            nodeSelectorTerms:
+            - matchExpressions:
+              - key: node-role.kubernetes.io/master
+                operator: DoesNotExist
                         
