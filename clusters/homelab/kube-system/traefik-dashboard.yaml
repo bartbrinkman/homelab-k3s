@@ -13,8 +13,10 @@ spec:
         paths:
           - pathType: ImplementationSpecific
             backend:
-              serviceName: traefik-dashboard
-              servicePort: dashboard-http
+              service: 
+                name: traefik-dashboard
+                port: 
+                  name: dashboard-http        
   tls:
     - hosts:
       - traefik.k3s.bartbrinkman.nl
