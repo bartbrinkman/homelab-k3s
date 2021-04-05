@@ -47,7 +47,7 @@ spec:
         scrapeInterval: 60s
         resources:
           limits: 
-            memory: 512Mi
+            memory: 1024Mi
         storageSpec: 
           volumeClaimTemplate:
             spec:
@@ -66,9 +66,6 @@ spec:
                     operator: DoesNotExist
 
     prometheusOperator:
-      resources:
-          limits: 
-            memory: 512Mi
       affinity:
         nodeAffinity:
           requiredDuringSchedulingIgnoredDuringExecution:
