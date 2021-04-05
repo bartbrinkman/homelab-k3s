@@ -33,7 +33,7 @@ spec:
         tls:
           - secretName: grafana-k3s-bartbrinkman-nl-tls
             hosts:
-              - grafana.k3s.barbrinkman.nl
+              - grafana.k3s.bartbrinkman.nl
       affinity:
         nodeAffinity:
           requiredDuringSchedulingIgnoredDuringExecution:
