@@ -1,4 +1,4 @@
-apiVersion: networking.k8s.io/v1beta1
+apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
   name: traefik-dashboard-ingress
@@ -8,14 +8,14 @@ metadata:
     cert-manager.io/cluster-issuer: letsencrypt
 spec:
   rules:
-  - host: traefik.k3s.bartbrinkman.nl
-    http:
-      paths:
-      - pathType: ImplementationSpecific
-        backend:
-          serviceName: traefik-dashboard
-          servicePort: dashboard-http
+    - host: traefik.k3s.bartbrinkman.nl
+      http:
+        paths:
+          - pathType: ImplementationSpecific
+            backend:
+              serviceName: traefik-dashboard
+              servicePort: dashboard-http
   tls:
-  - hosts:
-    - traefik.k3s.bartbrinkman.nl
-    secretName: traefik-k3s-bartbrinkman-nl-tls
+    - hosts:
+      - traefik.k3s.bartbrinkman.nl
+      secretName: traefik-k3s-bartbrinkman-nl-tls

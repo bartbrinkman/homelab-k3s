@@ -46,8 +46,8 @@ spec:
       prometheusSpec:
         scrapeInterval: 60s
         resources:
-          requests:
-            memory: 200Mi
+          limits: 
+            memory: 512Mi
         storageSpec: 
           volumeClaimTemplate:
             spec:
@@ -56,7 +56,7 @@ spec:
               resources:
                 requests:
                   storage: 50Gi
-        retention: 1d
+        retention: 30d
         affinity:
           nodeAffinity:
             requiredDuringSchedulingIgnoredDuringExecution:
@@ -66,6 +66,9 @@ spec:
                     operator: DoesNotExist
 
     prometheusOperator:
+      resources:
+          limits: 
+            memory: 512Mi
       affinity:
         nodeAffinity:
           requiredDuringSchedulingIgnoredDuringExecution:
