@@ -16,7 +16,7 @@ spec:
         namespace: default      
   values:
     defaultRules:
-      create: true
+      create: false
       rules:
         alertmanager: false
         etcd: false
