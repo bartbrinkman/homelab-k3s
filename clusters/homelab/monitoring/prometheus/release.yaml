@@ -15,35 +15,34 @@ spec:
         name: kube-prometheus-stack
         namespace: default      
   values:
-    defaultRules:
-      create: false
-      rules:
-        alertmanager: false
-        etcd: false
-        general: true
-        k8s: true
-        kubeApiserver: false
-        kubeApiserverAvailability: false
-        kubeApiserverError: false
-        kubeApiserverSlos: false
-        kubelet: false
-        kubePrometheusGeneral: false
-        kubePrometheusNodeAlerting: false
-        kubePrometheusNodeRecording: false
-        kubernetesAbsent: false
-        kubernetesApps: false
-        kubernetesResources: false
-        kubernetesStorage: false
-        kubernetesSystem: false
-        kubeScheduler: false
-        kubeStateMetrics: false
-        network: false
-        node: false
-        prometheus: true
-        prometheusOperator: true
-        time: true
-
     alertmanager:
+      enabled: false
+
+    kubeApiServer:
+      enabled: false
+
+    kubelet:
+      enabled: false
+
+    kubeControllerManager:
+      enabled: false
+
+    coreDns:
+      enabled: false
+
+    kubeDns:
+      enabled: false
+
+    kubeEtcd:
+      enabled: false
+
+    kubeScheduler:
+      enabled: false
+
+    kubeProxy:
+      enabled: false
+
+    kubeStateMetrics:
       enabled: false
 
     grafana:
