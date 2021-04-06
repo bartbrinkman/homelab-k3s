@@ -26,19 +26,19 @@ spec:
         kubeApiserverAvailability: false
         kubeApiserverError: false
         kubeApiserverSlos: false
-        kubelet: true
-        kubePrometheusGeneral: true
-        kubePrometheusNodeAlerting: true
-        kubePrometheusNodeRecording: true
-        kubernetesAbsent: true
-        kubernetesApps: true
-        kubernetesResources: true
-        kubernetesStorage: true
-        kubernetesSystem: true
+        kubelet: false
+        kubePrometheusGeneral: false
+        kubePrometheusNodeAlerting: false
+        kubePrometheusNodeRecording: false
+        kubernetesAbsent: false
+        kubernetesApps: false
+        kubernetesResources: false
+        kubernetesStorage: false
+        kubernetesSystem: false
         kubeScheduler: false
-        kubeStateMetrics: true
-        network: true
-        node: true
+        kubeStateMetrics: false
+        network: false
+        node: false
         prometheus: true
         prometheusOperator: true
         time: true
