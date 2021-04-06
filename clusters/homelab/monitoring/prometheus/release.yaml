@@ -16,8 +16,32 @@ spec:
         namespace: default      
   values:
     defaultRules:
+      create: true
       rules:
         alertmanager: false
+        etcd: false
+        general: true
+        k8s: true
+        kubeApiserver: false
+        kubeApiserverAvailability: false
+        kubeApiserverError: false
+        kubeApiserverSlos: false
+        kubelet: true
+        kubePrometheusGeneral: true
+        kubePrometheusNodeAlerting: true
+        kubePrometheusNodeRecording: true
+        kubernetesAbsent: true
+        kubernetesApps: true
+        kubernetesResources: true
+        kubernetesStorage: true
+        kubernetesSystem: true
+        kubeScheduler: false
+        kubeStateMetrics: true
+        network: true
+        node: true
+        prometheus: true
+        prometheusOperator: true
+        time: true
 
     alertmanager:
       enabled: false
