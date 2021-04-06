@@ -68,7 +68,7 @@ spec:
     
     prometheus:
       prometheusSpec:
-        scrapeInterval: 60s
+        scrapeInterval: 30s
         resources:
           limits: 
             memory: 1536Mi
