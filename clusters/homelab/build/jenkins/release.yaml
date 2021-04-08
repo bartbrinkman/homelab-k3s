@@ -25,12 +25,17 @@ spec:
           memory: "1536Mi"
       ingress:
         enabled: true
-        hostName: jenkins.k3s.bartbrinkman.nl
         annotations:
           kubernetes.io/ingress.class: traefik
+          cert-manager.io/cluster-issuer: letsencrypt
+        hostName: jenkins.k3s.bartbrinkman.nl
       probes:
         startupProbe:
           timeoutSeconds: 30
           failureThreshold: 50
     persistence:
       storageClass: managed-nfs-storage
+    tls:
+      - hosts:
+          - jenkins.k3s.bartbrinkman.nl
+        secretName: jenkins-k3s-bartbrinkman-nl-tls

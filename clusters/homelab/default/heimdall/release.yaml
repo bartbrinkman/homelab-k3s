@@ -19,10 +19,15 @@ spec:
       enabled: true
       annotations: 
         kubernetes.io/ingress.class: traefik
+        cert-manager.io/cluster-issuer: letsencrypt
       hosts:
-        - host: heimdall.k3s
+        - host: heimdall.k3s.bartbrinkman.nl
           paths:
             - path: /
+    tls:
+      - hosts:
+          - heimdall.k3s.bartbrinkman.nl
+        secretName: heimdall-k3s-bartbrinkman-nl-tls
     persistence:
       config:
         enabled: true
