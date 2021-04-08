@@ -29,10 +29,10 @@ spec:
           kubernetes.io/ingress.class: traefik
           cert-manager.io/cluster-issuer: letsencrypt
         hostName: jenkins.k3s.bartbrinkman.nl       
-      tls:
-        - secretName: jenkins-k3s-bartbrinkman-nl-tls
-          hosts:
-            - jenkins.k3s.bartbrinkman.nl
+        tls:
+          - secretName: jenkins-k3s-bartbrinkman-nl-tls
+            hosts:
+              - jenkins.k3s.bartbrinkman.nl
       probes:
         startupProbe:
           timeoutSeconds: 30
