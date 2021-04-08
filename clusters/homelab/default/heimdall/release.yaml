@@ -24,10 +24,10 @@ spec:
         - host: heimdall.k3s.bartbrinkman.nl
           paths:
             - path: /
-    tls:
-      - hosts:
-          - heimdall.k3s.bartbrinkman.nl
-        secretName: heimdall-k3s-bartbrinkman-nl-tls
+      tls:
+        - hosts:
+            - heimdall.k3s.bartbrinkman.nl
+          secretName: heimdall-k3s-bartbrinkman-nl-tls
     persistence:
       config:
         enabled: true
