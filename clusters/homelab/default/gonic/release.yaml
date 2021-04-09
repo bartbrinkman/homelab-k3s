@@ -31,9 +31,13 @@ spec:
       data:
         enabled: true
         storageClass: managed-nfs-storage
+        accessMode: ReadWriteOnce
+        size: 1Gi
       music:
         enabled: true
         storageClass: managed-nfs-storage
+        accessMode: ReadWriteOnce
+        size: 100Gi
     affinity:
         nodeAffinity:
           requiredDuringSchedulingIgnoredDuringExecution:
