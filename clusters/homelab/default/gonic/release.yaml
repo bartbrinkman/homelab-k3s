@@ -1,0 +1,45 @@
+apiVersion: helm.toolkit.fluxcd.io/v2beta1
+kind: HelmRelease
+metadata:
+  name: gonic
+  namespace: default
+spec:
+  interval: 1m
+  timeout: 30m
+  chart:
+    spec:
+      chart: gonic
+      version: 6.0.1
+      sourceRef:
+        kind: HelmRepository
+        name: gonic
+        namespace: default
+  values:
+    ingress:
+      enabled: true
+      annotations: 
+        kubernetes.io/ingress.class: traefik
+        cert-manager.io/cluster-issuer: letsencrypt
+      hosts:
+        - host: gonic.k3s.bartbrinkman.nl
+          paths:
+            - path: /
+      tls:
+        - hosts:
+            - gonic.k3s.bartbrinkman.nl
+          secretName: gonic-k3s-bartbrinkman-nl-tls
+    persistence:
+      data:
+        enabled: true
+        storageClass: managed-nfs-storage
+      music:
+        enabled: true
+        storageClass: managed-nfs-storage
+    affinity:
+        nodeAffinity:
+          requiredDuringSchedulingIgnoredDuringExecution:
+            nodeSelectorTerms:
+            - matchExpressions:
+              - key: node-role.kubernetes.io/master
+                operator: DoesNotExist
+                        
